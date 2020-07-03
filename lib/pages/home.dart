@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutternewsapp/helpers/news.dart';
-import 'package:flutternewsapp/widgets/custombottomnavigationbar.dart';
-import 'package:flutternewsapp/widgets/strings.dart';
+import 'package:flutternewsapp/models/article.dart';
+
+import 'package:flutternewsapp/widgets/newstile.dart';
 
 
 class HomePage extends StatefulWidget{
@@ -12,7 +13,7 @@ class HomePage extends StatefulWidget{
 }
 class _HomePageState extends State<HomePage> {
    bool _loading;
-  var newslist;
+   List<Article>   newslist;
   void getNews() async {
     News news = newsAll;
     await news.getNews();
@@ -33,12 +34,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar:PreferredSize(
+          preferredSize: Size.fromHeight(100.0), // here the desired height
+          child: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title:Text("WW",style: TextStyle(fontSize:36,
-                  color:Colors.black,
-                  fontWeight:FontWeight.bold),)),
+        title:Padding(
+          padding: const EdgeInsets.only(top:20),
+          child: Text("WW",style: TextStyle(fontSize:36,
+                    color:Colors.black,
+                    fontWeight:FontWeight.bold),),
+        ))),
       
     body: SafeArea(
         child: _loading
@@ -57,37 +63,31 @@ class _HomePageState extends State<HomePage> {
     //    ),
     //      SizedBox(height:20), 
        SingleChildScrollView(
-          child: Column(
-          children: <Widget>[
-            Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                      height: MediaQuery.of(context).size.height,
-                      decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-                         
-            ),
-            child: ListView.builder(
-                itemCount: newslist.length,
-                // shrinkWrap: true,
-                // physics: ClampingScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return NewsTile(
-                    imgUrl: newslist[index].urlToImage ?? "",
-                    title: newslist[index].title ?? "",
-                   // desc: newslist[index].description ?? "",
-                    content: newslist[index].content ?? "",
-                    posturl: newslist[index].articleUrl ?? "",
-                  );
-                }),
-                  ),
-                )
+          child: Card(
+              child: Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+         // color: Colors.red,
+          borderRadius: BorderRadius.only(
+              // topRight: Radius.circular(20),
+              //     topLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+                bottomLeft: Radius.circular(20))),
+                     
+          
+          child: ListView.builder(
+              itemCount: newslist.length,
+              // shrinkWrap: true,
+              // physics: ClampingScrollPhysics(),
+              itemBuilder: (context, index) {
+              return NewsTile(
+                newsItem:newslist[index],
+                
+              );
+              }),
               )
-                    
-          ]
-          )
+            )
       ),
       
     ),

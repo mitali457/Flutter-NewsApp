@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutternewsapp/helpers/news.dart';
-import 'package:flutternewsapp/widgets/strings.dart';
+import 'package:flutternewsapp/models/article.dart';
+import 'package:flutternewsapp/widgets/newstile.dart';
 
 class LikePage extends StatefulWidget {
   @override
@@ -8,17 +9,12 @@ class LikePage extends StatefulWidget {
 }
 
 class _LikePageState extends State<LikePage> {
-  var newslist;
-  // bool _loading;
- // bool loader = true;
+  List<Article> newslist;
+ 
   void getNews() async {
-    // News news = News();
-    // await news.getNews();
+    
     newslist = newsAll.news;
-    // print(newslist.length);
-    //  setState(() {
-    //   _loading = false;
-    // });
+   
   }
 
     
@@ -86,11 +82,7 @@ class _LikePageState extends State<LikePage> {
                                   // physics: ClampingScrollPhysics(),
                                   itemBuilder: (context, index) {
                                     return NewsTile(
-                                      imgUrl: newslist[index].urlToImage ?? "",
-                                      title: newslist[index].title ?? "",
-                                      // desc: newslist[index].description ?? "",
-                                      content: newslist[index].content ?? "",
-                                      posturl: newslist[index].articleUrl ?? "",
+                                       newsItem:newslist[index],
                                     );
                                   }),
                             ),

@@ -19,9 +19,12 @@ class _ProfilePageState extends State<ProfilePage> {
             decoration: BoxDecoration(
             //color: Colors.red,
             border: Border.all(),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.only(
+                  
+                    bottomRight: Radius.circular(20),
+                    bottomLeft: Radius.circular(20)),
              boxShadow: [
-                          BoxShadow(color: Colors.black, blurRadius: 10)
+                          BoxShadow(color: Colors.black, blurRadius: 20)
                         ],
            image: DecorationImage(
         image: AssetImage("assets/profile.png"),
