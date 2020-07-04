@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
             initialRoute: '/',
       theme: ThemeData(
        
-        primarySwatch: Colors.blue,
-        
+        primarySwatch: Colors.indigo,
+        //canvasColor: Colors.indigo
       ),
       debugShowCheckedModeBanner: false,
     //home: OnbordingFlow (),

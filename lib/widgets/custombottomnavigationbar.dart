@@ -22,10 +22,14 @@ class CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
      Scaffold(
       
           body:tabs[_selectedPage],
-          bottomNavigationBar: BottomNavigationBar(
-      
+          bottomNavigationBar:
+        BottomNavigationBar(
+      selectedItemColor: Colors.indigo,
+      unselectedItemColor:Colors.grey,
+     // fixedColor: Colors.yellowAccent,
         //backgroundColor: Colors.green,
         currentIndex: _selectedPage,
+        //fixedColor: Colors.indigo,
         onTap: (int index) {
           setState(() {
             _selectedPage = index;  
@@ -35,35 +39,36 @@ class CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color:Colors.grey,
             ),
             
-            title: Text('Home', style: TextStyle(color: Colors.grey,)),
+            title: Text('Home', ),
           ),
 
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
-              color: Colors.grey,
+              
             ),
            
 
-            title: Text('Likes', style: TextStyle(color: Colors.grey,)),
+            title: Text('Likes', ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person, color: Colors.grey,),
+            icon: Icon(Icons.person, ),
            
             title: Text(
               'Profile',
-              style: TextStyle(color: Colors.grey,),
-            ),
+              
+            )
           ),
          BottomNavigationBarItem(
-            icon: Icon(Icons.settings, color: Colors.grey,),
+            icon: Icon(Icons.settings, 
+            // 
+            ),
            
             title: Text(
               'Settings',
-              style: TextStyle(color: Colors.grey,),
+              // ,
             ),
           ),
     
@@ -72,6 +77,6 @@ class CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
         ),
         ),
     
-        );
+     );
   }
 }

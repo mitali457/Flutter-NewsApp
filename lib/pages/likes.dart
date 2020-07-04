@@ -39,15 +39,15 @@ class _LikePageState extends State<LikePage> {
           Padding(
             padding: const EdgeInsets.only(left: 40, top: 80),
             child: Text(
-                "WW",
+                "NewsApp",
                 style: TextStyle(
-                    fontSize: 36, color: Colors.black, fontWeight: FontWeight.bold),
+                    fontSize: 36, color: Colors.indigo, fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(height: 20),
           SingleChildScrollView(
                 child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(18),
             child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[

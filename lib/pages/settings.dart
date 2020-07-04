@@ -17,7 +17,7 @@ class _SettingsState extends State<Settings> {
        Padding(
          padding: const EdgeInsets.only(left:40,top:80),
          child: Text("Settings",style: TextStyle(fontSize:36,
-                  color:Colors.black,
+                  color:Colors.indigo,
                   fontWeight:FontWeight.bold),),
        ),
          SizedBox(height:20), 

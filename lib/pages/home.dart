@@ -41,8 +41,8 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
         title:Padding(
           padding: const EdgeInsets.only(top:20),
-          child: Text("WW",style: TextStyle(fontSize:36,
-                    color:Colors.black,
+          child: Text("NewsApp",style: TextStyle(fontSize:36,
+                    color:Colors.indigo,
                     fontWeight:FontWeight.bold),),
         ))),
       

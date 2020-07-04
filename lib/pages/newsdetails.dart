@@ -45,7 +45,7 @@ class NewsDetails extends StatefulWidget {
                       topLeft: Radius.circular(20),
                       bottomRight: Radius.circular(10),
                       bottomLeft: Radius.circular(10))),
-           height: 730,
+           height: 740,
             //color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(22.0),
@@ -54,11 +54,11 @@ class NewsDetails extends StatefulWidget {
                   Text(widget.newsItem.title,style: TextStyle(fontSize:30,
                           color:Colors.black,
                           fontWeight:FontWeight.w800),),
-                          SizedBox(height:30),
+                          SizedBox(height:20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                Icon(Icons.favorite_border,size:30),
+                Icon(Icons.favorite_border,size:20),
                 Text('Like',style: TextStyle(fontSize:20,
                       color:Colors.black,
                       fontWeight:FontWeight.bold),),
@@ -76,12 +76,12 @@ class NewsDetails extends StatefulWidget {
              style: TextStyle(fontSize:18,
                       color:Colors.black,
                       fontWeight:FontWeight.w500), ),
-                      SizedBox(height:20),
+                      SizedBox(height:10),
                        ClipRRect(
                       borderRadius: BorderRadius.circular(6),
                       child: Image.network(
                        widget. newsItem.urlToImage,
-                        height: 300,
+                        height: 250,
                         width: MediaQuery.of(context).size.width,
                         fit: BoxFit.cover,
                       )),
